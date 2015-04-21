@@ -1,0 +1,25 @@
+{
+  "name": "rolling_window",
+  "license": "Apache License 2.0",
+  "main": "rolling_window.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darshit-shah/rolling_window.git"
+  },
+  "keywords": [
+    "rolling window"
+  ],
+  "author": "Darshit Shah",
+  "bugs": {
+    "url": "https://github.com/darshit-shah/rolling_window/issues"
+  },
+  "homepage": "https://github.com/darshit-shah/rolling_window",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "description": "rolling window for general purpose",
+  "version": "0.0.1"
+}
