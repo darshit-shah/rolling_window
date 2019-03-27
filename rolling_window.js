@@ -42,6 +42,31 @@ function rolling_window() {
         console.log({ windowSize: window_size, window: window });
     }
 
+    this.reduce = function(reduceMethod, startValue) {
+        if (reduceMethod == undefined || typeof reduceMethod !== 'function')
+            throw new Error("a function is required at first argument");
+
+        if (startValue == undefined)
+            throw new Error("startValue(second argument) required in this method");
+
+        if (!isFinite(startValue)) 
+            throw new Error("startValue(second argument) should be an integer");
+
+        if ((+startValue - parseInt(+startValue)) != 0)
+            throw new Error("startValue(second argument) should be an integer");
+
+        startValue = +startValue;
+
+        return this.getWindow().reduce(reduceMethod, startValue);
+    }
+
+    this.each = function(eachMethod) {
+        if (eachMethod == undefined || typeof eachMethod !== 'function')
+            throw new Error("a function is required at first argument");
+
+        return this.getWindow().map(eachMethod);
+    }
+
     function adjustWindow() {
         for (var i = window.length; i > window_size; i--) {
             window.shift();
