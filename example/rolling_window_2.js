@@ -10,6 +10,9 @@ function test() {
     for (var i = 0; i < values.length; i++) {
         myWindow.push(values[i]);
         console.log({ item: values[i], window_size: myWindow.getWindowSize(), window: myWindow.getWindow() });
+        console.log({sum: myWindow.reduce((acc, d) => acc + d.index, 0)});
+        console.log({avg: myWindow.reduce((acc, d) => acc + d.index, 0) / myWindow.getWindowSize()});
+        console.log({each: myWindow.each((d) => d.index * d.index)});
     }
 }
 
